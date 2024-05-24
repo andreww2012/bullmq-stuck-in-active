@@ -1,0 +1,12 @@
+services:
+  redis:
+    image: redis:7.0.5
+    restart: always
+    ports:
+      - ${REDIS_PORT:-6379}:6379
+
+  redis-gui:
+    image: redislabs/redisinsight:latest
+    restart: always
+    ports:
+      - ${REDIS_GUI_PORT:-5540}:5540
